@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sterling Plumbing Co. — Expert Plumbers You Can Trust</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #0d1b2a;
+    --navy-mid: #162030;
+    --navy-light: #1e2d40;
+    --copper: #b87333;
+    --copper-light: #d4924a;
+    --copper-pale: #f0d4b0;
+    --cream: #f5f0e8;
+    --white: #ffffff;
+    --gray: #8a9ab0;
+    --border: rgba(184,115,51,0.25);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--navy);
+    color: var(--cream);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 17px;
+    line-height: 1.7;
+    overflow-x: hidden;
+  }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(13,27,42,0.95);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 5%;
+    height: 72px;
+  }
+  .nav-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 22px; letter-spacing: 0.04em;
+    color: var(--white);
+    text-decoration: none;
+    display: flex; align-items: center; gap: 10px;
+  }
+  .nav-logo .pipe-icon {
+    width: 32px; height: 32px;
+    background: var(--copper);
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .nav-logo .pipe-icon svg { width: 20px; height: 20px; }
+  .nav-links {
+    display: flex; gap: 36px; list-style: none;
+  }
+  .nav-links a {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 600; font-size: 15px; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--gray);
+    text-decoration: none; transition: color 0.2s;
+  }
+  .nav-links a:hover { color: var(--copper-light); }
+  .nav-cta {
+    background: var(--copper);
+    color: var(--navy) !important;
+    padding: 10px 22px !important;
+    border-radius: 2px;
+    font-weight: 700 !important;
+    color: var(--navy) !important;
+    transition: background 0.2s !important;
+  }
+  .nav-cta:hover { background: var(--copper-light) !important; color: var(--navy) !important; }
+
+  /* HERO */
+  .hero {
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 120px 5% 80px;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; top: 0; right: 0;
+    width: 55%; height: 100%;
+    background: var(--navy-light);
+    clip-path: polygon(8% 0, 100% 0, 100% 100%, 0% 100%);
+    z-index: 0;
+  }
+  .hero-grid-lines {
+    position: absolute; inset: 0; z-index: 0;
+    background-image:
+      linear-gradient(rgba(184,115,51,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(184,115,51,0.04) 1px, transparent 1px);
+    background-size: 60px 60px;
+  }
+  .hero-left {
+    position: relative; z-index: 1;
+    padding-right: 60px;
+  }
+  .hero-eyebrow {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--copper);
+    margin-bottom: 20px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .hero-eyebrow::before {
+    content: '';
+    display: block; width: 40px; height: 2px;
+    background: var(--copper);
+  }
+  h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(56px, 7vw, 88px);
+    font-weight: 900;
+    line-height: 0.92;
+    letter-spacing: -0.01em;
+    color: var(--white);
+    margin-bottom: 28px;
+  }
+  h1 em {
+    font-style: normal;
+    color: var(--copper);
+    display: block;
+  }
+  .hero-desc {
+    font-size: 17px;
+    color: var(--gray);
+    max-width: 440px;
+    margin-bottom: 44px;
+    line-height: 1.7;
+  }
+  .hero-actions {
+    display: flex; gap: 16px; flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--copper);
+    color: var(--navy);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 16px; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 16px 36px;
+    border-radius: 2px;
+    text-decoration: none;
+    border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    display: inline-block;
+  }
+  .btn-primary:hover { background: var(--copper-light); transform: translateY(-1px); }
+  .btn-outline {
+    background: transparent;
+    color: var(--cream);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 16px; letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 15px 36px;
+    border-radius: 2px;
+    text-decoration: none;
+    border: 1px solid rgba(245,240,232,0.3);
+    transition: border-color 0.2s, color 0.2s;
+    display: inline-block;
+  }
+  .btn-outline:hover { border-color: var(--copper); color: var(--copper-pale); }
+
+  .hero-stats {
+    display: flex; gap: 40px;
+    margin-top: 60px;
+    padding-top: 40px;
+    border-top: 1px solid var(--border);
+  }
+  .stat-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 40px; font-weight: 900;
+    color: var(--white);
+    line-height: 1;
+  }
+  .stat-num span { color: var(--copper); }
+  .stat-label {
+    font-size: 13px; color: var(--gray);
+    margin-top: 4px;
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.06em; text-transform: uppercase;
+  }
+
+  .hero-right {
+    position: relative; z-index: 1;
+    display: flex; flex-direction: column;
+    gap: 16px;
+    padding-left: 40px;
+  }
+
+  /* Service card in hero */
+  .hero-service-card {
+    background: rgba(13,27,42,0.8);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 20px 24px;
+    display: flex; align-items: center; gap: 20px;
+    transition: border-color 0.2s, transform 0.2s;
+    cursor: default;
+  }
+  .hero-service-card:hover { border-color: var(--copper); transform: translateX(4px); }
+  .card-icon {
+    width: 44px; height: 44px; flex-shrink: 0;
+    background: rgba(184,115,51,0.12);
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .card-icon svg { width: 24px; height: 24px; color: var(--copper); }
+  .card-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 700; font-size: 17px; letter-spacing: 0.03em;
+    color: var(--white);
+  }
+  .card-sub { font-size: 13px; color: var(--gray); margin-top: 2px; }
+  .card-arrow {
+    margin-left: auto;
+    color: var(--copper); font-size: 20px;
+    opacity: 0.6;
+  }
+
+  /* BADGE */
+  .emergency-badge {
+    background: rgba(184,115,51,0.15);
+    border: 1px solid var(--copper);
+    border-radius: 4px;
+    padding: 14px 20px;
+    display: flex; align-items: center; gap: 14px;
+    margin-bottom: 8px;
+  }
+  .badge-dot {
+    width: 10px; height: 10px; border-radius: 50%;
+    background: #4ade80;
+    flex-shrink: 0;
+    box-shadow: 0 0 0 4px rgba(74,222,128,0.15);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0%, 100% { box-shadow: 0 0 0 4px rgba(74,222,128,0.15); }
+    50% { box-shadow: 0 0 0 8px rgba(74,222,128,0.05); }
+  }
+  .badge-text {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 15px; font-weight: 700;
+    color: var(--copper-pale);
+    letter-spacing: 0.04em;
+  }
+  .badge-num {
+    margin-left: auto;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px; font-weight: 900;
+    color: var(--copper);
+  }
+
+  /* SECTION STYLES */
+  section { padding: 100px 5%; }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.2em;
+    text-transform: uppercase; color: var(--copper);
+    margin-bottom: 16px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .section-label::before {
+    content: '';
+    display: block; width: 28px; height: 2px;
+    background: var(--copper);
+  }
+  h2 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: clamp(36px, 5vw, 58px);
+    font-weight: 900;
+    color: var(--white);
+    line-height: 0.95;
+    letter-spacing: -0.01em;
+    margin-bottom: 20px;
+  }
+  h2 .accent { color: var(--copper); }
+  .section-desc {
+    font-size: 17px; color: var(--gray);
+    max-width: 520px; line-height: 1.7;
+    margin-bottom: 56px;
+  }
+
+  /* SERVICES */
+  .services-bg { background: var(--navy-mid); }
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2px;
+  }
+  .service-tile {
+    background: var(--navy-light);
+    padding: 44px 36px;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.25s;
+    cursor: default;
+  }
+  .service-tile::after {
+    content: '';
+    position: absolute; bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: var(--copper);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s;
+  }
+  .service-tile:hover { background: rgba(30,45,64,0.95); }
+  .service-tile:hover::after { transform: scaleX(1); }
+  .service-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 72px; font-weight: 900;
+    color: rgba(184,115,51,0.08);
+    position: absolute; top: 16px; right: 20px;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .service-icon {
+    width: 52px; height: 52px;
+    background: rgba(184,115,51,0.1);
+    border-radius: 4px;
+    display: flex; align-items: center; justify-content: center;
+    margin-bottom: 24px;
+  }
+  .service-icon svg { width: 28px; height: 28px; color: var(--copper); }
+  h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px; font-weight: 800; letter-spacing: 0.02em;
+    color: var(--white); margin-bottom: 12px;
+  }
+  .service-tile p { font-size: 15px; color: var(--gray); line-height: 1.65; }
+  .service-link {
+    display: inline-flex; align-items: center; gap: 8px;
+    margin-top: 20px;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px; font-weight: 700; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--copper);
+    text-decoration: none; transition: gap 0.2s;
+  }
+  .service-link:hover { gap: 14px; }
+
+  /* WHY US */
+  .why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+  .why-visual {
+    position: relative;
+    height: 500px;
+    background: var(--navy-light);
+    border-radius: 4px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+  .why-visual-inner {
+    position: absolute; inset: 0;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center;
+    gap: 24px;
+  }
+  .pipe-diagram {
+    width: 280px; height: 280px;
+  }
+  .why-badge {
+    background: rgba(13,27,42,0.9);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 16px 24px;
+    text-align: center;
+  }
+  .why-badge-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 36px; font-weight: 900;
+    color: var(--copper);
+  }
+  .why-badge-label {
+    font-size: 12px; color: var(--gray);
+    font-family: 'Barlow Condensed', sans-serif;
+    letter-spacing: 0.1em; text-transform: uppercase;
+  }
+  .features-list { display: flex; flex-direction: column; gap: 28px; }
+  .feature-item { display: flex; gap: 20px; align-items: flex-start; }
+  .feature-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 700;
+    color: var(--copper); letter-spacing: 0.1em;
+    padding-top: 3px; flex-shrink: 0; width: 32px;
+  }
+  .feature-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px; font-weight: 800; color: var(--white);
+    letter-spacing: 0.02em; margin-bottom: 6px;
+  }
+  .feature-desc { font-size: 15px; color: var(--gray); line-height: 1.65; }
+
+  /* TESTIMONIALS */
+  .testimonials-bg { background: var(--navy-mid); }
+  .testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+  }
+  .testimonial-card {
+    background: var(--navy-light);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 36px 32px;
+    position: relative;
+  }
+  .quote-mark {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 80px; font-weight: 900;
+    color: var(--copper);
+    opacity: 0.25;
+    line-height: 0.7;
+    margin-bottom: 16px;
+    display: block;
+  }
+  .testimonial-text {
+    font-size: 16px;
+    color: var(--cream);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 28px;
+  }
+  .testimonial-author {
+    display: flex; align-items: center; gap: 14px;
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+  }
+  .author-avatar {
+    width: 42px; height: 42px; border-radius: 50%;
+    background: rgba(184,115,51,0.2);
+    display: flex; align-items: center; justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 16px;
+    color: var(--copper);
+    flex-shrink: 0;
+  }
+  .author-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px; font-weight: 700; color: var(--white);
+  }
+  .author-loc { font-size: 13px; color: var(--gray); }
+  .stars { color: var(--copper); font-size: 14px; letter-spacing: 2px; margin-bottom: 4px; }
+
+  /* CONTACT */
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 80px;
+    align-items: start;
+  }
+  .contact-info { display: flex; flex-direction: column; gap: 32px; }
+  .contact-item { display: flex; gap: 20px; align-items: flex-start; }
+  .contact-icon {
+    width: 48px; height: 48px; flex-shrink: 0;
+    background: rgba(184,115,51,0.1);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .contact-icon svg { width: 22px; height: 22px; color: var(--copper); }
+  .contact-item-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.12em;
+    text-transform: uppercase; color: var(--copper);
+    margin-bottom: 4px;
+  }
+  .contact-item-value {
+    font-size: 17px; color: var(--white); font-weight: 500;
+  }
+  .contact-item-sub { font-size: 13px; color: var(--gray); margin-top: 2px; }
+
+  /* FORM */
+  .contact-form { display: flex; flex-direction: column; gap: 16px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .form-group { display: flex; flex-direction: column; gap: 8px; }
+  .form-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; font-weight: 700; letter-spacing: 0.14em;
+    text-transform: uppercase; color: var(--gray);
+  }
+  input, select, textarea {
+    background: var(--navy-light);
+    border: 1px solid rgba(184,115,51,0.2);
+    border-radius: 3px;
+    color: var(--cream);
+    font-family: 'Lora', Georgia, serif;
+    font-size: 15px;
+    padding: 14px 16px;
+    outline: none;
+    transition: border-color 0.2s;
+    width: 100%;
+  }
+  input:focus, select:focus, textarea:focus {
+    border-color: var(--copper);
+  }
+  input::placeholder, textarea::placeholder { color: rgba(138,154,176,0.5); }
+  select { appearance: none; }
+  select option { background: var(--navy-light); }
+  textarea { resize: vertical; min-height: 120px; }
+  .form-submit {
+    background: var(--copper);
+    color: var(--navy);
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 16px; letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 18px;
+    border-radius: 3px;
+    border: none; cursor: pointer;
+    transition: background 0.2s, transform 0.15s;
+    margin-top: 8px;
+  }
+  .form-submit:hover { background: var(--copper-light); transform: translateY(-1px); }
+
+  /* FOOTER */
+  footer {
+    background: #080f18;
+    border-top: 1px solid var(--border);
+    padding: 60px 5% 40px;
+  }
+  .footer-top {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 48px;
+    margin-bottom: 48px;
+    padding-bottom: 48px;
+    border-bottom: 1px solid rgba(184,115,51,0.1);
+  }
+  .footer-logo {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-weight: 800; font-size: 22px;
+    color: var(--white);
+    display: flex; align-items: center; gap: 10px;
+    margin-bottom: 16px;
+  }
+  .footer-logo .pipe-icon {
+    width: 32px; height: 32px;
+    background: var(--copper);
+    border-radius: 3px;
+    display: flex; align-items: center; justify-content: center;
+  }
+  .footer-logo .pipe-icon svg { width: 20px; height: 20px; }
+  .footer-desc { font-size: 14px; color: var(--gray); line-height: 1.7; max-width: 280px; }
+  .footer-col-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--copper);
+    margin-bottom: 20px;
+  }
+  .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+  .footer-links a {
+    font-size: 14px; color: var(--gray); text-decoration: none;
+    transition: color 0.2s;
+  }
+  .footer-links a:hover { color: var(--cream); }
+  .footer-bottom {
+    display: flex; justify-content: space-between; align-items: center;
+  }
+  .footer-copy { font-size: 13px; color: rgba(138,154,176,0.6); }
+  .footer-license {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 12px; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--copper);
+    opacity: 0.7;
+  }
+
+  /* ANIMATIONS */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  .hero-left > * {
+    animation: fadeUp 0.6s both;
+  }
+  .hero-left > *:nth-child(1) { animation-delay: 0.1s; }
+  .hero-left > *:nth-child(2) { animation-delay: 0.2s; }
+  .hero-left > *:nth-child(3) { animation-delay: 0.3s; }
+  .hero-left > *:nth-child(4) { animation-delay: 0.4s; }
+  .hero-left > *:nth-child(5) { animation-delay: 0.5s; }
+
+  .hero-right > * {
+    animation: fadeUp 0.5s both;
+  }
+  .hero-right > *:nth-child(1) { animation-delay: 0.3s; }
+  .hero-right > *:nth-child(2) { animation-delay: 0.4s; }
+  .hero-right > *:nth-child(3) { animation-delay: 0.5s; }
+  .hero-right > *:nth-child(4) { animation-delay: 0.6s; }
+  .hero-right > *:nth-child(5) { animation-delay: 0.7s; }
+
+  @media (max-width: 900px) {
+    .hero { grid-template-columns: 1fr; padding-top: 100px; }
+    .hero::before { display: none; }
+    .hero-left { padding-right: 0; }
+    .hero-right { padding-left: 0; }
+    .services-grid { grid-template-columns: 1fr; }
+    .testimonials-grid { grid-template-columns: 1fr; }
+    .why-grid, .contact-grid, .footer-top { grid-template-columns: 1fr; }
+    .nav-links { display: none; }
+    .form-row { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav>
+  <a href="#" class="nav-logo">
+    <div class="pipe-icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round">
+        <path d="M3 9h18M3 15h18M9 3v18M15 3v18" opacity="0.6"/>
+        <rect x="2" y="8" width="20" height="8" rx="1" fill="white" fill-opacity="0.15"/>
+      </svg>
+    </div>
+    STERLING PLUMBING
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#why-us">About</a></li>
+    <li><a href="#testimonials">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-grid-lines"></div>
+
+  <div class="hero-left">
+    <div class="hero-eyebrow">Licensed & Insured Since 1987</div>
+    <h1>Expert<br>Plumbing<br><em>Done Right.</em></h1>
+    <p class="hero-desc">
+      From emergency repairs to full remodels, Sterling Plumbing delivers fast, professional service at honest prices. We're your neighbor — not a call center.
+    </p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get a Free Quote</a>
+      <a href="tel:+15551234567" class="btn-outline">Call (555) 123-4567</a>
+    </div>
+    <div class="hero-stats">
+      <div>
+        <div class="stat-num">37<span>+</span></div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div>
+        <div class="stat-num">4.9<span>★</span></div>
+        <div class="stat-label">Google Rating</div>
+      </div>
+      <div>
+        <div class="stat-num">12k<span>+</span></div>
+        <div class="stat-label">Jobs Completed</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="emergency-badge">
+      <div class="badge-dot"></div>
+      <div class="badge-text">24/7 Emergency Service Available</div>
+      <div class="badge-num">NOW</div>
+    </div>
+    <div class="hero-service-card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7z"/>
+        </svg>
+      </div>
+      <div>
+        <div class="card-title">Water Heater Repair & Install</div>
+        <div class="card-sub">Tank & tankless, same-day available</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+    <div class="hero-service-card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 12.1 3 13.25c0 2.22 1.8 4.05 4 4.05z"/>
+          <path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/>
+        </svg>
+      </div>
+      <div>
+        <div class="card-title">Drain Cleaning & Hydro-Jetting</div>
+        <div class="card-sub">Camera inspection included</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+    <div class="hero-service-card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+          <polyline points="9,22 9,12 15,12 15,22"/>
+        </svg>
+      </div>
+      <div>
+        <div class="card-title">Whole-Home Repiping</div>
+        <div class="card-sub">PEX & copper, warranty backed</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+    <div class="hero-service-card">
+      <div class="card-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="10"/>
+          <path d="M12 8v4l3 3"/>
+        </svg>
+      </div>
+      <div>
+        <div class="card-title">Emergency Leak Response</div>
+        <div class="card-sub">60-minute response window</div>
+      </div>
+      <div class="card-arrow">→</div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section id="services" class="services-bg">
+  <div class="section-label">What We Do</div>
+  <h2>Our <span class="accent">Services</span></h2>
+  <p class="section-desc">Whether it's a dripping faucet at midnight or a new bathroom build-out, we've got the tools, license, and grit to handle it.</p>
+
+  <div class="services-grid">
+    <div class="service-tile">
+      <div class="service-num">01</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M12 22a7 7 0 0 0 7-7c0-2-1-3.9-3-5.5s-3.5-4-4-6.5c-.5 2.5-2 4.9-4 6.5S5 13 5 15a7 7 0 0 0 7 7z"/></svg>
+      </div>
+      <h3>Water Heaters</h3>
+      <p>Repair, replace, or upgrade to a tankless system. We carry major brands in stock for same-day installation and guarantee your hot water is back fast.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+    <div class="service-tile">
+      <div class="service-num">02</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9,22 9,12 15,12 15,22"/></svg>
+      </div>
+      <h3>Repiping</h3>
+      <p>Old galvanized or copper failing? We repipe homes in PEX or copper with minimal wall damage, pulling all required permits and passing final inspection.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+    <div class="service-tile">
+      <div class="service-num">03</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="2"/><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+      </div>
+      <h3>Drain Cleaning</h3>
+      <p>Snaking, hydro-jetting, and camera inspection. We find the blockage, clear it completely, and show you the footage so there's no guesswork.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+    <div class="service-tile">
+      <div class="service-num">04</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+      </div>
+      <h3>Bathroom & Kitchen</h3>
+      <p>Full fixture installs, shower/tub replacements, garbage disposals, and kitchen rough-ins. We coordinate with your contractor or work solo start-to-finish.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+    <div class="service-tile">
+      <div class="service-num">05</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16,8 20,8 23,11 23,16 16,16 16,8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+      </div>
+      <h3>Sewer Line Service</h3>
+      <p>Tree root intrusion, bellied lines, or full replacements — we handle it with trenchless methods when possible to save your yard.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+    <div class="service-tile">
+      <div class="service-num">06</div>
+      <div class="service-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><polygon points="13,2 3,14 12,14 11,22 21,10 12,10 13,2"/></svg>
+      </div>
+      <h3>Emergency Repairs</h3>
+      <p>Burst pipes, major leaks, no hot water — we answer 24/7/365. A licensed plumber, not an answering service, picks up your call every time.</p>
+      <a href="#contact" class="service-link">Call Now →</a>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why-us">
+  <div class="why-grid">
+    <div class="why-visual">
+      <div class="why-visual-inner">
+        <svg class="pipe-diagram" viewBox="0 0 280 280" fill="none">
+          <!-- Pipe system illustration -->
+          <rect x="20" y="120" width="240" height="40" rx="6" fill="rgba(184,115,51,0.15)" stroke="rgba(184,115,51,0.5)" stroke-width="1.5"/>
+          <rect x="60" y="60" width="40" height="100" rx="6" fill="rgba(184,115,51,0.1)" stroke="rgba(184,115,51,0.4)" stroke-width="1.5"/>
+          <rect x="180" y="60" width="40" height="100" rx="6" fill="rgba(184,115,51,0.1)" stroke="rgba(184,115,51,0.4)" stroke-width="1.5"/>
+          <rect x="60" y="160" width="40" height="80" rx="6" fill="rgba(184,115,51,0.1)" stroke="rgba(184,115,51,0.4)" stroke-width="1.5"/>
+          <rect x="180" y="160" width="40" height="80" rx="6" fill="rgba(184,115,51,0.1)" stroke="rgba(184,115,51,0.4)" stroke-width="1.5"/>
+          <!-- Joints -->
+          <circle cx="80" cy="120" r="10" fill="rgba(184,115,51,0.3)" stroke="rgba(184,115,51,0.7)" stroke-width="1.5"/>
+          <circle cx="200" cy="120" r="10" fill="rgba(184,115,51,0.3)" stroke="rgba(184,115,51,0.7)" stroke-width="1.5"/>
+          <circle cx="80" cy="160" r="10" fill="rgba(184,115,51,0.3)" stroke="rgba(184,115,51,0.7)" stroke-width="1.5"/>
+          <circle cx="200" cy="160" r="10" fill="rgba(184,115,51,0.3)" stroke="rgba(184,115,51,0.7)" stroke-width="1.5"/>
+          <!-- Valve -->
+          <rect x="120" y="128" width="40" height="24" rx="4" fill="rgba(184,115,51,0.4)" stroke="rgba(184,115,51,0.9)" stroke-width="1.5"/>
+          <line x1="140" y1="110" x2="140" y2="128" stroke="rgba(184,115,51,0.7)" stroke-width="2.5" stroke-linecap="round"/>
+          <circle cx="140" cy="106" r="6" fill="rgba(184,115,51,0.5)" stroke="rgba(184,115,51,0.9)" stroke-width="1.5"/>
+          <!-- Water flow lines -->
+          <path d="M40 140 Q55 140 60 140" stroke="rgba(100,180,240,0.5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="4,3"/>
+          <path d="M100 140 Q110 140 120 140" stroke="rgba(100,180,240,0.5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="4,3"/>
+          <path d="M160 140 Q170 140 180 140" stroke="rgba(100,180,240,0.5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="4,3"/>
+          <path d="M220 140 Q235 140 250 140" stroke="rgba(100,180,240,0.5)" stroke-width="2" stroke-linecap="round" stroke-dasharray="4,3"/>
+          <!-- Labels -->
+          <text x="140" y="48" fill="rgba(184,115,51,0.8)" font-size="11" font-family="Barlow Condensed, sans-serif" font-weight="700" text-anchor="middle" letter-spacing="2">WATER SUPPLY SYSTEM</text>
+        </svg>
+        <div style="display:flex;gap:16px;">
+          <div class="why-badge">
+            <div class="why-badge-num">A+</div>
+            <div class="why-badge-label">BBB Rating</div>
+          </div>
+          <div class="why-badge">
+            <div class="why-badge-num">100%</div>
+            <div class="why-badge-label">Satisfaction</div>
+          </div>
+          <div class="why-badge">
+            <div class="why-badge-num">LIC</div>
+            <div class="why-badge-label">TX #24881</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="section-label">Why Sterling</div>
+      <h2>The <span class="accent">Difference</span> You'll Notice</h2>
+      <p class="section-desc">We don't chase volume. We build relationships by showing up on time, doing the job right the first time, and never leaving until you're satisfied.</p>
+
+      <div class="features-list">
+        <div class="feature-item">
+          <div class="feature-num">01</div>
+          <div>
+            <div class="feature-title">Upfront, Flat-Rate Pricing</div>
+            <p class="feature-desc">You get the full price before we touch a wrench. No surprise charges, no hourly billing games. What we quote is what you pay.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-num">02</div>
+          <div>
+            <div class="feature-title">Master Plumbers on Every Call</div>
+            <p class="feature-desc">No apprentices alone on your job. Every call is handled or directly supervised by a Texas-licensed master plumber with years of field experience.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-num">03</div>
+          <div>
+            <div class="feature-title">2-Year Workmanship Warranty</div>
+            <p class="feature-desc">We stand behind every repair and installation with a full two-year warranty on our labor — in writing, no fine print.</p>
+          </div>
+        </div>
+        <div class="feature-item">
+          <div class="feature-num">04</div>
+          <div>
+            <div class="feature-title">We Respect Your Home</div>
+            <p class="feature-desc">Shoe covers, drop cloths, and a clean job site when we leave. Your home is treated like ours.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="testimonials-bg">
+  <div class="section-label">What Customers Say</div>
+  <h2>Real Reviews, <span class="accent">Real People</span></h2>
+  <p class="section-desc">Don't take our word for it. Here's what homeowners and businesses across the area say about Sterling Plumbing.</p>
+
+  <div class="testimonials-grid">
+    <div class="testimonial-card">
+      <span class="quote-mark">"</span>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">Called at 11pm for a burst pipe and they had someone at my door in under an hour. Professional, calm, and got it fixed without tearing up half my wall. Incredible service.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">JM</div>
+        <div>
+          <div class="author-name">James M.</div>
+          <div class="author-loc">Homeowner, Tyler TX</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <span class="quote-mark">"</span>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">Sterling repiped our whole house in two days. They laid out exactly what they'd do, stuck to the price, and cleaned up better than I expected. Already recommended them to three neighbors.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">SR</div>
+        <div>
+          <div class="author-name">Sandra R.</div>
+          <div class="author-loc">Homeowner, Lindale TX</div>
+        </div>
+      </div>
+    </div>
+    <div class="testimonial-card">
+      <span class="quote-mark">"</span>
+      <div class="stars">★★★★★</div>
+      <p class="testimonial-text">Used them for our restaurant kitchen rough-in and they coordinated perfectly with our contractor. Passed inspection first try. These guys are the real deal — honest and skilled.</p>
+      <div class="testimonial-author">
+        <div class="author-avatar">DK</div>
+        <div>
+          <div class="author-name">David K.</div>
+          <div class="author-loc">Business Owner, Longview TX</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="section-label">Let's Talk</div>
+  <h2>Get Your <span class="accent">Free Quote</span></h2>
+  <p class="section-desc">Fill out the form and we'll get back to you within the hour during business hours. For emergencies, call us directly.</p>
+
+  <div class="contact-grid">
+    <div class="contact-info">
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.6 1.27h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.61a16 16 0 0 0 5.55 5.55l.96-.96a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 21 16.92z"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-title">Phone</div>
+          <div class="contact-item-value">(555) 123-4567</div>
+          <div class="contact-item-sub">24/7 emergency line</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-title">Email</div>
+          <div class="contact-item-value">service@sterlingplumbing.com</div>
+          <div class="contact-item-sub">We reply within the hour</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-title">Service Area</div>
+          <div class="contact-item-value">East Texas Region</div>
+          <div class="contact-item-sub">Tyler, Lindale, Longview & surrounding</div>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="contact-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+        </div>
+        <div>
+          <div class="contact-item-title">Hours</div>
+          <div class="contact-item-value">Mon–Fri 7am–6pm, Sat 8am–4pm</div>
+          <div class="contact-item-sub">Emergency dispatch always available</div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="contact-form">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">First Name</label>
+            <input type="text" placeholder="John">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Last Name</label>
+            <input type="text" placeholder="Smith">
+          </div>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Phone</label>
+            <input type="tel" placeholder="(555) 000-0000">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email</label>
+            <input type="email" placeholder="you@email.com">
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Service Needed</label>
+          <select>
+            <option value="">Select a service...</option>
+            <option>Water Heater Repair / Replacement</option>
+            <option>Drain Cleaning</option>
+            <option>Leak Repair</option>
+            <option>Repiping</option>
+            <option>Sewer Line</option>
+            <option>Bathroom / Kitchen Plumbing</option>
+            <option>Emergency Service</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tell Us About Your Issue</label>
+          <textarea placeholder="Describe the problem, your address, and the best time to reach you..."></textarea>
+        </div>
+        <button type="button" class="form-submit" onclick="alert('Thank you! We\'ll be in touch within the hour.')">
+          Send My Request — It's Free
+        </button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-logo">
+        <div class="pipe-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2.5" stroke-linecap="round"><rect x="2" y="8" width="20" height="8" rx="1" fill="white" fill-opacity="0.15"/></svg>
+        </div>
+        STERLING PLUMBING CO.
+      </div>
+      <p class="footer-desc">Serving East Texas families and businesses with honest, expert plumbing since 1987. Licensed, bonded, and proud to be local.</p>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#services">Water Heaters</a></li>
+        <li><a href="#services">Drain Cleaning</a></li>
+        <li><a href="#services">Repiping</a></li>
+        <li><a href="#services">Sewer Lines</a></li>
+        <li><a href="#services">Emergency Repair</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#why-us">About Us</a></li>
+        <li><a href="#testimonials">Reviews</a></li>
+        <li><a href="#contact">Get a Quote</a></li>
+        <li><a href="#">Careers</a></li>
+        <li><a href="#">Blog</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Contact</div>
+      <ul class="footer-links">
+        <li><a href="tel:+15551234567">(555) 123-4567</a></li>
+        <li><a href="mailto:service@sterlingplumbing.com">Email Us</a></li>
+        <li><a href="#">Tyler, TX Office</a></li>
+        <li><a href="#">Service Area Map</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2025 Sterling Plumbing Co. All rights reserved. TX Lic. #24881</div>
+    <div class="footer-license">Bonded & Insured</div>
+  </div>
+</footer>
+
+</body>
+</html>
